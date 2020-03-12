@@ -7,6 +7,19 @@ rendering function.
 A component's rendering function receives the custom element's attributes and
 children, and it produces a new HTML tree as its output.
 
+## Installation
+
+The module is experimental and isn't published on NPM yet, but can be installed
+directly from the GitHub repository.
+
+```sh
+npm install marekweb/rehype-components
+```
+
+```js
+const rehypeComponents = require("rehype-components");
+```
+
 ## Example
 
 Attach the plugin:
