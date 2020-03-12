@@ -1,9 +1,15 @@
 {
   "name": "rehype-components",
+  "repository": "marekweb/rehype-components",
+  "license": "MIT",
+  "version": "0.1.0",
   "scripts": {
     "format": "prettier --write --prose-wrap always '**/*.{js,md}'",
     "test": "node test"
   },
+  "files": [
+    "index.js"
+  ],
   "devDependencies": {
     "hastscript": "^5.1.2",
     "prettier": "^1.19.1",
