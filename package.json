@@ -4,21 +4,26 @@
   "license": "MIT",
   "version": "0.1.0",
   "scripts": {
-    "format": "prettier --write --prose-wrap always '**/*.{js,md}'",
-    "test": "node test"
+    "format": "prettier --write .",
+    "test": "jest"
   },
   "files": [
     "index.js"
   ],
   "devDependencies": {
     "hastscript": "^5.1.2",
-    "prettier": "^1.19.1",
-    "rehype-format": "^3.0.0",
+    "jest": "^25.2.0",
+    "prettier": "^2.0.2",
+    "rehype-format": "^3.0.1",
     "rehype-parse": "^6.0.2",
     "rehype-stringify": "^6.0.1",
     "unified": "^8.4.2"
   },
   "dependencies": {
     "unist-util-visit": "^2.0.2"
+  },
+  "prettier": {
+    "proseWrap": "always",
+    "arrowParens": "avoid"
   }
 }
