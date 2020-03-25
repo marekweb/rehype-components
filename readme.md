@@ -31,8 +31,8 @@ unified()
     components: {
       "documentation-page": DocumentationPage,
       "info-box": InfoBox,
-      "copyright-notice": CopyrightNotice
-    }
+      "copyright-notice": CopyrightNotice,
+    },
   });
 // ...
 ```

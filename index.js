@@ -2,12 +2,13 @@ const unistUtilVisit = require("unist-util-visit");
 
 function rehypeComponents(options) {
   const { components = {} } = options;
-
-  return tree =>
+  const processor = this;
+  return (tree, vfile) => {
+    const context = { tree, vfile, processor };
     unistUtilVisit(tree, (node, index, parent) => {
       const component = components[node.tagName];
       if (component) {
-        const replacedNode = component(node.properties, node.children);
+        const replacedNode = component(node.properties, node.children, context);
         parent.children[index] = replacedNode;
 
         // This return value makes sure that the traversal continues by
@@ -15,6 +16,7 @@ function rehypeComponents(options) {
         return [unistUtilVisit.SKIP, index];
       }
     });
+  };
 }
 
 module.exports = rehypeComponents;
