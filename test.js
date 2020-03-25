@@ -13,8 +13,8 @@ function processDocument(document) {
       components: {
         "documentation-page": DocumentationPage,
         "info-box": InfoBox,
-        "copyright-notice": CopyrightNotice
-      }
+        "copyright-notice": CopyrightNotice,
+      },
     })
     .use(rehypeStringify)
     .use(rehypeFormat)
@@ -47,19 +47,14 @@ const DocumentationPage = (properties, children) =>
 const CopyrightNotice = (properties, children) =>
   h("footer.notice", `© ${properties.year}`);
 
-const InfoBox = (properties, children) =>
+const InfoBox = (properties, children, context) =>
   h(
     ".infobox",
     h(".infobox-title", properties.title || "Info"),
     h(".infobox-body", children)
   );
 
-async function test() {
+test("example", async () => {
   const output = await processDocument(input);
-  assert.equal(output.contents, expected, "output equals expected");
-}
-
-test().catch(error => {
-  console.error(error);
-  process.exit(1);
+  expect(output.contents).toBe(expected);
 });
