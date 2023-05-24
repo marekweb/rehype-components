@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "strict": true,
+    "outDir": "./dist",
+    "module": "ES2020",
+    "moduleResolution": "nodenext"
+  },
+  "exclude": ["node_modules", "dist"]
+}

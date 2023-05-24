@@ -1,10 +1,12 @@
-const unified = require("unified");
-const rehypeParse = require("rehype-parse");
-const rehypeStringify = require("rehype-stringify");
-const rehypeFormat = require("rehype-format");
-const h = require("hastscript");
-const assert = require("assert");
-const rehypeComponents = require(".");
+import { unified } from "unified";
+import rehypeParse from "rehype-parse";
+import rehypeStringify from "rehype-stringify";
+import rehypeFormat from "rehype-format";
+import { h } from "hastscript";
+import { test } from "node:test";
+import assert from "node:assert/strict";
+
+import rehypeComponents from "./dist/components.js";
 
 function processDocument(document) {
   return unified()
@@ -56,5 +58,5 @@ const InfoBox = (properties, children, context) =>
 
 test("example", async () => {
   const output = await processDocument(input);
-  expect(output.contents).toBe(expected);
+  assert.deepEqual(String(output), expected);
 });
