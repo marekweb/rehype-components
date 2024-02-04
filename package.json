@@ -9,6 +9,7 @@
     "rehype-plugin"
   ],
   "scripts": {
+    "build": "tsc",
     "check": "npm run lint && npm run format",
     "fix": "npm run lint:fix && npm run format:fix",
     "format": "prettier --check .",
