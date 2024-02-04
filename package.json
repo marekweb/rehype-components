@@ -13,9 +13,12 @@
     "format": "prettier --write .",
     "test": "npm run build && node --test"
   },
+  "exports": "./dist/components.js",
   "files": [
-    "index.js"
+    "dist/components.js",
+    "dist/components.d.ts"
   ],
+  "types": "./dist/components.d.ts",
   "devDependencies": {
     "@types/hast": "^3.0.4",
     "hastscript": "^9.0.0",
