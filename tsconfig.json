@@ -3,8 +3,9 @@
     "target": "es2020",
     "strict": true,
     "outDir": "./dist",
-    "module": "ES2020",
-    "moduleResolution": "nodenext"
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "declaration": true
   },
   "exclude": ["node_modules", "dist"]
 }
