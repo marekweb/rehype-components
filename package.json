@@ -9,15 +9,22 @@
     "rehype-plugin"
   ],
   "scripts": {
-    "build": "tsc",
-    "format": "prettier --write .",
-    "test": "npm run build && node --test"
+    "check": "npm run lint && npm run format",
+    "fix": "npm run lint:fix && npm run format:fix",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
+    "test": "npm run build && node --test",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
   },
   "files": [
     "index.js"
   ],
   "devDependencies": {
     "@types/hast": "^2.3.4",
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
+    "@typescript-eslint/parser": "^6.20.0",
+    "eslint": "^8.56.0",
     "hastscript": "^7.2.0",
     "prettier": "^2.8.8",
     "rehype-format": "^4.0.1",
