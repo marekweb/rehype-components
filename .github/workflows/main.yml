@@ -3,8 +3,8 @@ on:
   - pull_request
   - push
 jobs:
-  main:
-    name: ${{matrix.node}}
+  tests:
+    name: Tests on ${{matrix.node}}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -17,4 +17,16 @@ jobs:
       matrix:
         node:
           - lts/gallium
+          - lts/hydrogen
+          - lts/iron
           - node
+  lint:
+    name: Lint and format check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "lts/iron"
+      - run: npm install
+      - run: npm run lint

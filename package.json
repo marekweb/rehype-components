@@ -10,8 +10,13 @@
   ],
   "scripts": {
     "build": "tsc",
-    "format": "prettier --write .",
-    "test": "npm run build && node --test"
+    "check": "npm run lint && npm run format",
+    "fix": "npm run lint:fix && npm run format:fix",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
+    "test": "npm run build && node --test",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
   },
   "exports": "./dist/components.js",
   "files": [
@@ -21,6 +26,8 @@
   "types": "./dist/components.d.ts",
   "devDependencies": {
     "@types/hast": "^3.0.4",
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
+    "@typescript-eslint/parser": "^6.20.0",
     "hastscript": "^9.0.0",
     "prettier": "^3.2.5",
     "rehype-format": "^5.0.0",
