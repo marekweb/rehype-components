@@ -53,7 +53,7 @@ test("example from readme", async () => {
     h(
       ".infobox",
       h(".infobox-title", properties.title || "Info"),
-      h(".infobox-body", children)
+      h(".infobox-body", children),
     );
 
   const output = await processDocument(
@@ -65,7 +65,7 @@ test("example from readme", async () => {
         "copyright-notice": CopyrightNotice,
       },
     },
-    true
+    true,
   );
   assert.deepEqual(String(output), expected);
 });
@@ -120,11 +120,11 @@ test("component returns invalid content", async () => {
     err => {
       assert.strictEqual(
         err.message.includes("expected to return ElementContent"),
-        true
+        true,
       );
       return true;
     },
-    "Did not throw with expected error message"
+    "Did not throw with expected error message",
   );
 });
 
