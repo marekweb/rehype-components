@@ -79,7 +79,7 @@ const InfoBox = (properties, children) =>
   h(
     ".infobox",
     h(".infobox-title", properties.title || "Info"),
-    h(".infobox-body", children)
+    h(".infobox-body", children),
   );
 ```
 
